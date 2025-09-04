@@ -119,4 +119,24 @@ T -> T == T
 T -> F == F
 F -> T == F
 F -> F == F
+
 -/
+
+axiom P : Prop
+axiom Q : Prop
+
+def Z : Prop := P ∧ Q → Q ∧ P
+
+-- Proof of an implication is a function
+def z : Z :=
+  fun (pq : P ∧ Q) =>
+  And.intro
+    (pq.right)
+    (pq.left)
+
+-- Prove that P implies Q
+-- \and for the and symbol
+
+def ex : Prop := P ∧ Q
+def wy : Prop := Q ∧ P
+def ze : Prop := ex → wy
