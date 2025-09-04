@@ -134,6 +134,10 @@ def z : Z :=
     (pq.right)
     (pq.left)
 
+axiom pq : P ∧ Q
+
+#check z pq
+
 -- Prove that P implies Q
 -- \and for the and symbol
 
