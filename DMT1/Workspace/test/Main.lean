@@ -88,7 +88,35 @@ x = 5 -> x+1 = 6, which is true
 T -> T == T
 T -> F == F
 F -> T == T
-F -> F == F
+F -> F == T
 -/
 
+/-
+### Logical Connections
 
+Logical Connections imply:
+*Implies*
+
+T -> T == T
+T -> F == F
+F -> T == T
+F -> F == T
+
+x = 5 -> x + 2 = 7
+**How to prove this?**
+We will assume that x = 5 (no proof), by the assumption
+that x = 5 we can add 5 + 2 = 7, therefore 7 = 7 which is true.
+
+You *assume* that there is a proof of P and *show* the proof of Q
+- If P is true, Q must be true
+
+In both cases where yhr premise is false, there is no need to think about the rest
+of the proposition
+- It will always be true, because the premise will not be violated
+
+And truth table:
+T -> T == T
+T -> F == F
+F -> T == F
+F -> F == F
+-/
