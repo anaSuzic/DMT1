@@ -42,7 +42,8 @@ structure Prod (α : Type u) (β : Type v) where
 #check (Prod)
 #check Prod Bool String
 
-def aProd : Prod Bool String := Prod.mk true "I hate this stuff."
+def aProd : Prod Bool String := Prod.mk true "I love this stuff."
+
 #eval aProd
 
 #check Prod.mk
@@ -152,5 +153,4 @@ Prop                           Type
   P -> Q <-------------------> S -> T
 ∀(p,P),Q <-------------------> S -> T
   Or P Q <-------------------> Sum S T
-
 -/
