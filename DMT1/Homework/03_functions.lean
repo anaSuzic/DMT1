@@ -305,10 +305,15 @@ replace the name of any unused argument with _.
 
 @@@ -/
 
+<<<<<<< HEAD
 def fTrue : Nat → Nat → Nat
 | n1, _  => n1  -- complete the definition (this is the correct definition)
 
 #eval fTrue (2+3) 4
+=======
+def fTrue : fBool
+| n1, _  => n1  -- complete the definition
+>>>>>>> 2eded7dce58b892132799c248d8033431e27ce12
 
 /- @@@
 #13 [5 points]
@@ -318,7 +323,7 @@ returns the value of the "false branch,"
 the second argument, which is to say *n2*.
 @@@ -/
 
-def fFalse : Nat → Nat → Nat
+def fFalse :fBool
 | _, n2  => n2
 
 #eval fFalse (2+3) 4
@@ -414,6 +419,21 @@ def ifThenElsePoly {α : Type} : Bool → α → α → α
 
 #check ifThenElsePoly
 -- ifThenElsePoly : {α : Type} → Bool → α → α → α
+
+def fBool' (α : Type) := α → α → α
+
+def fTrue' {α : Type} : α → α → α
+| a1, _ => a1
+
+def fFalse' {α : Type} : α → α → α
+| _, a2 => a2
+
+
+def ifThenElse' {α : Type} : (fBool' α) → α → α → α
+| b, n1, n2 => b n1 n2
+
+#eval ifThenElse' fTrue' "Hi" "Bye"
+#eval ifThenElse' fFalse' "Hi" "Bye"
 
 
 /- @@@
