@@ -68,7 +68,7 @@ the proof.
 
 example (K Z : Prop) (h : K → False) (k : K) : Z :=
 (
-
+  False.elim (h k)
 )
 
 
@@ -78,7 +78,10 @@ P and Q are arbitrary propositions then False *and*
 P implies Q.
 @@@-/
 
--- ANSWER
+example (P Q : Prop) : False ∧ P → Q :=
+  fun h => False.elim h.left
+
+
 
 
 /- @@@
@@ -86,12 +89,18 @@ P implies Q.
 Give both formal and English (natural language) proofs.
 @@@ -/
 
--- ANSWER
+example : False → False :=
+  fun
+    f => f
+
 
 /- @@@
 #7 State and prove the proposition that, if P and Q are
 arbitrary propositions, then (P ∧ Q) ∧ (Q → False) → P
 @@@ -/
+
+example (P Q : Prop) : (P ∧ Q) ∧ (Q → False) → P :=
+  fun h => h.left.left
 
 
 /- @@@
@@ -99,7 +108,7 @@ arbitrary propositions, then (P ∧ Q) ∧ (Q → False) → P
 @@@ -/
 
 example (P Q : Prop) : (P ∨ Q) ∧ (Q → False) → P :=
-(
-
-  _
-)
+fun h =>
+    match h.left with
+    | Or.inl p => p
+    | Or.inr q => False.elim (h.right q)
