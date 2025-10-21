@@ -4,7 +4,7 @@
 Recall from class discussion that the proposition,
 in Lean, called False, has no proofs at all. That
 is what makes it false. Assuming that there is such
-a proof assumes the impossible. Whenever we get to
+a proof assumes the impossibile. Whenever we get to
 a point where we have a proof of something that can't
 be proved, we know we've made contradictory assumptions
 somewhere along the way, and that it's actually not
@@ -12,7 +12,7 @@ possible to be in such a state. Therefore, if at any
 point in trying to prove something we can derive a
 proof of False, that means we're in a situation that
 can't actually happen so we don't have to finish the
-proof! This is the concept of False elimination. It's
+proof! This is the concept of False elminiation. It's
 how we use a proof of false.
 
 For example, suppose  K is some unknown proposition.
@@ -66,19 +66,20 @@ the proof state at the point where you need to finish
 the proof.
 @@@ -/
 
-example (K Z : Prop) (h : K → False) (k : K) : Z :=
-(
-
-)
+-- example (K Z : Prop) (h : K → False) (k : K) : Z :=
+-- (
+--   _
+-- )
 
 
 /- @@@
 #5 In Lean, state and prove the proposition that if
-P and Q are arbitrary propositions then False *and*
+P and Q are aribtrary propositions then False *and*
 P implies Q.
 @@@-/
 
 -- ANSWER
+
 
 
 /- @@@
@@ -86,7 +87,9 @@ P implies Q.
 Give both formal and English (natural language) proofs.
 @@@ -/
 
+
 -- ANSWER
+
 
 /- @@@
 #7 State and prove the proposition that, if P and Q are
@@ -94,12 +97,12 @@ arbitrary propositions, then (P ∧ Q) ∧ (Q → False) → P
 @@@ -/
 
 
+
 /- @@@
 #8 Prove the following: (P ∨ Q) ∧ (Q → False) → P
 @@@ -/
 
-example (P Q : Prop) : (P ∨ Q) ∧ (Q → False) → P :=
-(
-
-  _
-)
+-- example (P Q : Prop) : (P ∨ Q) ∧ (Q → False) → P :=
+-- (
+--   _
+-- )

@@ -61,7 +61,7 @@ also need to know that *if hunger and if money then sandwich*:
 H → M → S. (H ∧ M) together with (H → M → S) does make truth
 of S inevitable. You do then have a general theorem! Your job
 is to finish a proof of it.
--/
+ -/
 
 theorem getSandwich ( H M S : Prop) :
   (H ∧ M) →       -- assume hunger and money

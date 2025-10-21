@@ -3,7 +3,7 @@
 This homework is intended to significantly
 strengthen your understanding of issues in
 class so far, especially around the amazing
-correspondence between logical implication
+corresondence between logical implication
 and function types in the lambda calculus.
 
 The first part runs you through a bunch of
@@ -28,8 +28,7 @@ squared.
 @@@ -/
 
 def square : Nat → Nat :=
-  λ x => x * x
-
+  sorry
 
 /- @@@
 #1 [5 points].
@@ -118,7 +117,7 @@ replacing the *sorry* with your answer.
 def M : Nat → Nat → Nat := fun x y => x * y
 
 def M' : Nat → Nat :=
-  fun y => 2 * y
+  sorry
 
 /- @@@
 #6 [10 points].
@@ -141,13 +140,9 @@ if *f* is natural number multiplication, then the value
 should be 2 * 3 = 6.
 
 - define *apply* (put function type expressions in parens)
-- next test that the application, *apply add 2 3,* returns 5
+- next test that the applicatiuon, *apply add 2 3,* returns 5
 @@@ -/
 
-def apply : (Nat -> Nat -> Nat) -> Nat -> Nat -> Nat
-| f, x, y => f x y
-
-#eval apply (fun x y => x + y) 2 3
 
 /- @@@
 #7 [10 points].
@@ -155,12 +150,8 @@ def apply : (Nat -> Nat -> Nat) -> Nat -> Nat -> Nat
 Use #eval to the application, *apply (_) 2 3*, where _ is
 replaced with a lambda abstraction for Nat multiplication.
 @@@ -/
-
--- apply has already been defined, it makes this definition red so I am commenting it out.
-/-
 def apply : (Nat → Nat → Nat) → Nat → Nat → Nat
 | f, x, y => f x y
--/
 
 #eval apply (fun x y => x * y) 2 3
 
@@ -253,7 +244,7 @@ of this function, written using → notation?
 
 Answer here:
 
-ANSWER: {α : Type} (a : α) : α
+ANSWER: (α : Type) → α → α
 
 @@@ -/
 
@@ -305,15 +296,8 @@ replace the name of any unused argument with _.
 
 @@@ -/
 
-<<<<<<< HEAD
-def fTrue : Nat → Nat → Nat
-| n1, _  => n1  -- complete the definition (this is the correct definition)
-
-#eval fTrue (2+3) 4
-=======
 def fTrue : fBool
 | n1, _  => n1  -- complete the definition
->>>>>>> 2eded7dce58b892132799c248d8033431e27ce12
 
 /- @@@
 #13 [5 points]
@@ -326,7 +310,6 @@ the second argument, which is to say *n2*.
 def fFalse :fBool
 | _, n2  => n2
 
-#eval fFalse (2+3) 4
 
 /- @@@
 #14 [10 points]
@@ -406,19 +389,7 @@ the values to return on the true and false branches,
 respectively.
 @@@ -/
 
--- polymorphic version
-def ifThenElsePoly {α : Type} : Bool → α → α → α
-| true,  x, _ => x
-| false, _, y => y
-
-#eval ifThenElsePoly true "Hello" "Goodbye"
-#eval ifThenElsePoly false "Hello" "Goodbye"
-#eval ifThenElsePoly false true false
-#eval ifThenElsePoly true 5 4
-#eval ifThenElsePoly false 5 4
-
-#check ifThenElsePoly
--- ifThenElsePoly : {α : Type} → Bool → α → α → α
+-- Answer here
 
 def fBool' (α : Type) := α → α → α
 
