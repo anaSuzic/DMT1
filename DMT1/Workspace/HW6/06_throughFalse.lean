@@ -66,10 +66,17 @@ the proof state at the point where you need to finish
 the proof.
 @@@ -/
 
+<<<<<<<< HEAD:DMT1/Workspace/HW6/06_throughFalse.lean
 example (K Z : Prop) (h : K → False) (k : K) : Z :=
 (
   False.elim (h k)
 )
+========
+-- example (K Z : Prop) (h : K → False) (k : K) : Z :=
+-- (
+--   _
+-- )
+>>>>>>>> c8b2dfbb5da19d7167d684353b5c90a7d783bf5c:DMT1/Homework/HW06_throughFalse.lean
 
 
 /- @@@
@@ -107,8 +114,15 @@ example (P Q : Prop) : (P ∧ Q) ∧ (Q → False) → P :=
 #8 Prove the following: (P ∨ Q) ∧ (Q → False) → P
 @@@ -/
 
+<<<<<<<< HEAD:DMT1/Workspace/HW6/06_throughFalse.lean
 example (P Q : Prop) : (P ∨ Q) ∧ (Q → False) → P :=
 fun h =>
     match h.left with
     | Or.inl p => p
     | Or.inr q => False.elim (h.right q)
+========
+-- example (P Q : Prop) : (P ∨ Q) ∧ (Q → False) → P :=
+-- (
+--   _
+-- )
+>>>>>>>> c8b2dfbb5da19d7167d684353b5c90a7d783bf5c:DMT1/Homework/HW06_throughFalse.lean
