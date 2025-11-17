@@ -25,3 +25,9 @@ by
   intro hab hbc
   rewrite [hab] -- rewrite b with a, the command rewrite can be written as rw
   rewrite [hbc] -- rewrite c with b
+
+example (α : Type) (a b c : α) : (a = b) → (c = b) → a = c :=
+by
+  intro hab hcb
+  rw [hab]
+  rw [← hcb]
